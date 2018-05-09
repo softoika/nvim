@@ -1,0 +1,103 @@
+# 必ず読み込むプラグインをここに書く
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] # カラースキーマ
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  set background=dark
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  au MyAutoCmd VimEnter * nested colorscheme hybrid
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+"denite時に使用するキーマップ
+"ESCキーでdeniteを終了
+call denite#custom#map('insert', '<esc>', '<denite:enter_mode:normal>', 'noremap')
+call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
+"C-N,C-Pで上下移動
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+"C-J,C-Kでsplitで開く, C-Tでタブで開く
+call denite#custom#map('insert', '<C-j>', '<denite:do_action:split>', 'noremap')
+call denite#custom#map('insert', '<C-k>', '<denite:do_action:vsplit>', 'noremap')
+call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>', 'noremap')
+
+" 以下はdenite起動時に使用するキーマップ
+" バッファ一覧
+noremap <C-P> :Denite buffer<CR>
+" ファイル一覧
+noremap <C-N> :Denite -buffer-name=file file<CR>
+" 最近使ったファイルの一覧
+noremap <C-Z> :Denite file_old<CR>
+" カレントディレクトリ
+noremap <C-C> :Denite file_rec<CR>
+"バッファ一覧
+nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
+
+"Denite でバッファ内検索 
+nnoremap <silent> <Leader><C-f> :<C-u>Denite line<CR>
+nnoremap <silent> <expr><Space>l ":<C-u>DeniteWithCursorWord line<CR>"
+'''
+
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+let g:airline_theme = 'bubblegum'
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+" エラー行にカーソルをあわせた際に表示されるメッセージフォーマット
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" エラー表示の列を常時表示
+let g:ale_sign_column_always = 1
+
+" ファイルを開いたときにlint実行
+let g:ale_lint_on_enter = 1
+" ファイルを保存したときにlint実行
+let g:ale_lint_on_save = 1
+" 編集中のlintはしない
+let g:ale_lint_on_text_changed = 'never'
+
+" lint結果をロケーションリストとQuickFixには表示しない
+" 出てると結構うざいしQuickFixを書き換えられるのは困る
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
+
+" 有効にするlinter
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+" エラー箇所に移動
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+'''
+
