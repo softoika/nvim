@@ -13,3 +13,6 @@ set nobackup           " 末尾に~が付くバックアップファイルを生
 set noswapfile         " ファイルを開いているときにできる.swapファイルを生成しない
 set noundofile         " .un~のファイルを生成しない
 
+set ambiwidth=double
+
+" pythonのsmartindent設定

@@ -3,8 +3,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
@@ -16,6 +14,12 @@ depends = ['context_filetype.vim']
 
 [[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+'''
 
 [[plugins]] # カラースキーマ
 repo = 'w0ng/vim-hybrid'
@@ -101,3 +105,41 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 '''
 
+[[plugins]] # vimヘルプ日本語化
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_add = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'softoika/wrnvim'
+hook_add = '''
+let g:sendyml_path="/Users/hanafusaryo/wr"
+'''
+hook_post_update = '''
+call dein#remote_plugins()
+'''
