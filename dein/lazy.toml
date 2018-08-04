@@ -1,5 +1,26 @@
-# 特定の条件下でのみ読み込まれるプラグインをここに書く
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
 on_cmd = 'Dein'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+'''
+
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]] # vimヘルプ日本語化
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'softoika/wrnvim'
+hook_add = '''
+let g:sendyml_path="/Users/hanafusaryo/wr"
+'''
+hook_post_update = '''
+call dein#remote_plugins()
+'''
 

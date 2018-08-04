@@ -25,3 +25,4 @@ call s:load('plugins')
 call s:load('style')
 call s:load('keymap')
 call s:load('other')
+

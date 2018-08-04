@@ -1,6 +1,8 @@
-" 入力モード中に素早くjjと押すとノーマルモードに戻る
-inoremap <silent> jj <Esc>
-inoremap <silent> っｊ <Esc>
+let mapleader = "\<Space>"
+" jjでノーマルモード
+inoremap <silent> jj <Esc>:<C-u>w<CR>
+" インサートでもZZで保存終了
+inoremap <silent> ZZ <Esc>ZZ
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
@@ -20,9 +22,10 @@ nnoremap <S-Down>  <C-w>+<CR>
 nnoremap Y y$
 " terminalモードからノーマルモードへjjで戻るようにする
 tnoremap <silent> jj <C-\><C-n>
-
 " 画面分割してからターミナルを開く
 command! Tsp :sp | :terminal
 command! Tvp :vsp | :terminal
-
+" Enterでノーマルモードのまま改行挿入
 nnoremap <Return> o<ESC>
+" 行末にセミコロンを挿入する
+inoremap ;; <C-o>A;

@@ -3,24 +3,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-
-[[plugins]] # toml syntax
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
-
-[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-'''
-
 [[plugins]] # カラースキーマ
 repo = 'w0ng/vim-hybrid'
 hook_add = '''
@@ -29,6 +11,23 @@ hook_add = '''
   " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
+
+[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+let g:airline_theme = 'bubblegum'
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -58,19 +57,9 @@ noremap <C-C> :Denite file_rec<CR>
 nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 
 "Denite でバッファ内検索 
-nnoremap <silent> <Leader><C-f> :<C-u>Denite line<CR>
-nnoremap <silent> <expr><Space>l ":<C-u>DeniteWithCursorWord line<CR>"
+nnoremap <silent> <expr><Space><C-f> ":<C-u>Denite line<CR>"
+nnoremap <silent> <expr><Space>l ":<C-u>DeniteCursorWord line<CR>"
 '''
-
-[[plugins]]
-repo    = 'vim-airline/vim-airline'
-depends = ['vim-airline-themes']
-hook_add = '''
-let g:airline_theme = 'bubblegum'
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'w0rp/ale'
@@ -105,8 +94,6 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 '''
 
-[[plugins]] # vimヘルプ日本語化
-repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -135,11 +122,26 @@ on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
+# 知恵に読込するとうまく動かなかった
 [[plugins]]
-repo = 'softoika/wrnvim'
+repo = 'carlitux/deoplete-ternjs'
+depends = ['deoplete.nvim']
 hook_add = '''
-let g:sendyml_path="/Users/hanafusaryo/wr"
+let g:deoplete#sources#ternjs#tern_bin = '/Users/hanafusaryo/.nvm/versions/node/v10.7.0/lib/node_modules/tern/bin/tern'
+let g:deoplete#sources#ternjs#timeout = 1
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#depths = 1
+let g:deoplete#sources#ternjs#filter = 0
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ 'javascript']
 '''
-hook_post_update = '''
-call dein#remote_plugins()
-'''
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
