@@ -122,7 +122,7 @@ on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
-# 知恵に読込するとうまく動かなかった
+# 遅延読込するとうまく動かなかった
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
 depends = ['deoplete.nvim']
