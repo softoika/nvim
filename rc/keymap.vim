@@ -27,5 +27,5 @@ command! Tsp :sp | :terminal
 command! Tvp :vsp | :terminal
 " Enterでノーマルモードのまま改行挿入
 nnoremap <Return> o<ESC>
-" 行末にセミコロンを挿入する
-inoremap ;; <C-o>A;
+" カーソル位置を維持したまま行末にセミコロンを挿入する
+inoremap ;; <ESC>msA;<ESC>`sa
