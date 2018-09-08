@@ -1,6 +1,5 @@
-" NeovimにはPython3が必須で、Python2系と3系のパスを指定する必要がある
-let g:python_host_prog = '/Users/hanafusaryo/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/hanafusaryo/.pyenv/versions/neovim3/bin/python'
+" dein.vimなどpython3が必要なプラグインのためにpython3のパスを指定する
+let g:python3_host_prog = '/Users/r_hanafusa/.pyenv/shims/python3'
 
 " reset augroup
 augroup MyAutoCmd
