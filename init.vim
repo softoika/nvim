@@ -1,5 +1,5 @@
 " dein.vimなどpython3が必要なプラグインのためにpython3のパスを指定する
-let g:python3_host_prog = '/Users/r_hanafusa/.pyenv/shims/python3'
+let g:python3_host_prog = $NVIM_PYTHON3_HOST_PROG
 
 " reset augroup
 augroup MyAutoCmd
