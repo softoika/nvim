@@ -17,7 +17,7 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
 
-[[plugins]]
+[[plugins]] # フッター部分のデザインを変える
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
 hook_add = '''
@@ -92,7 +92,6 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 '''
 
-
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
@@ -119,23 +118,6 @@ hook_add = '''
 on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
-
-# 遅延読込するとうまく動かなかった
-[[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-depends = ['deoplete.nvim']
-hook_add = '''
-let g:deoplete#sources#ternjs#tern_bin = '/Users/hanafusaryo/.nvm/versions/node/v10.7.0/lib/node_modules/tern/bin/tern'
-let g:deoplete#sources#ternjs#timeout = 1
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#depths = 1
-let g:deoplete#sources#ternjs#filter = 0
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'vue',
-                \ 'javascript']
-'''
 
 [[plugins]]
 repo = 'cohama/lexima.vim'

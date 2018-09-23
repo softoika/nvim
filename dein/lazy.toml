@@ -15,12 +15,3 @@ on_ft = 'toml'
 [[plugins]] # vimヘルプ日本語化
 repo = 'vim-jp/vimdoc-ja'
 
-[[plugins]]
-repo = 'softoika/wrnvim'
-hook_add = '''
-let g:sendyml_path="/Users/hanafusaryo/wr"
-'''
-hook_post_update = '''
-call dein#remote_plugins()
-'''
-
