@@ -20,7 +20,7 @@ function! s:load(file) abort
     endif
 endfunction
 
-call s:load('plugins')
+call s:load('plugin')
 call s:load('style')
 call s:load('keymap')
 call s:load('other')
