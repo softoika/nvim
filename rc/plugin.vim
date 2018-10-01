@@ -27,6 +27,7 @@ let s:toml_dir = expand('$CONFIG/nvim/dein')
 
 call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
 call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
 
 call dein#end()
 call dein#save_state()
