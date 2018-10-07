@@ -20,7 +20,7 @@ $ python -V
 Python 3.7.0
 ```
 
-## 3. Install neovim client
+## 3. Install python neovim client
 ```
 $ pip install neovim
 ```
