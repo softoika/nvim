@@ -1,4 +1,0 @@
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript']
-
