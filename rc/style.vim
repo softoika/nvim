@@ -19,6 +19,5 @@ autocmd FileType vue  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 set number             " 行番号を表示する"
 set colorcolumn=80     " 80文字目にラインを入れる
 set cursorline         " カーソル行の背景色を変える
-set scrolloff=8        " 上下8行の視界を確保
 set pumheight=10       " 補完メニューの高さ
 
