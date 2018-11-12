@@ -36,3 +36,9 @@ repo = 'cohama/lexima.vim'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
+[[plugins]]
+repo = 'kassio/neoterm'
+hook_add = '''
+let g:neoterm_default_mod = 'vertical belowright'
+let g:neoterm_autoinsert = 1
+'''

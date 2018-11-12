@@ -113,3 +113,4 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'vue']
+
