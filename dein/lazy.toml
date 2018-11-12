@@ -75,7 +75,7 @@ nnoremap <silent> <expr><Space>l ":<C-u>DeniteCursorWord line<CR>"
 
 [[plugins]]
 repo = 'w0rp/ale'
-on_ft = ['python', 'javascript', 'html', 'css', 'markdown']
+on_ft = ['python', 'javascript', 'vue', 'html', 'css', 'markdown']
 hook_add = '''
 let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '⚠'
