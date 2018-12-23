@@ -104,6 +104,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'markdown': ['mdl'],
 \   'shell': ['shellcheck'],
+\   'cpp': ['clangd'],
 \}
 " エラー箇所に移動
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
