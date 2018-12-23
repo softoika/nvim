@@ -1,0 +1,9 @@
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_source = '''
+let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include'
+'''
+on_ft = ['c', 'cpp', 'cmake']
+depends = ['deoplete.nvim']
+
