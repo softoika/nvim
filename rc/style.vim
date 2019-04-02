@@ -15,6 +15,10 @@ autocmd FileType vue  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " シェルスクリプトも2文字幅
 autocmd FileType zsh  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType bash setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" yamlやjsonも2文字幅
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 
 "--------------------------------------
 " 表示関連
