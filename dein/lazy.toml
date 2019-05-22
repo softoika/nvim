@@ -1,4 +1,5 @@
 [[plugins]]
+
 repo = 'haya14busa/dein-command.vim'
 on_cmd = 'Dein'
 
@@ -56,20 +57,19 @@ if exists("*denite#custom#map")
     call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>', 'noremap')
 endif
 
+
 " 以下はdenite起動時に使用するキーマップ
 " バッファ一覧
-noremap <C-P> :Denite buffer<CR>
-" ファイル一覧
-""noremap <C-N> :Denite -buffer-name=file file<CR>
+nnoremap <silent> <expr><Space>p ":Denite file/rec -split='floating'<CR>"
 " 最近使ったファイルの一覧
-noremap <C-Z> :Denite file_old<CR>
+noremap <C-Z> :Denite file/old<CR>
 " カレントディレクトリ
-noremap <C-C> :Denite file_rec<CR>
+noremap <C-C> :Denite file/rec<CR>
 "バッファ一覧
 nnoremap sB :<C-u>Denite buffer -buffer-name=file<CR>
 
 "Denite でバッファ内検索 
-nnoremap <silent> <expr><Space><C-f> ":<C-u>Denite line<CR>"
+nnoremap <silent> <expr><Space>f ":<C-u>Denite line<CR>"
 nnoremap <silent> <expr><Space>l ":<C-u>DeniteCursorWord line<CR>"
 '''
 
