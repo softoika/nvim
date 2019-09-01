@@ -84,7 +84,7 @@ call denite#custom#option('default', s:denite_options)
 " TODO: agに変える(file/recだとagの方が早いらしい :h denite)
 if executable('rg')
   call denite#custom#var('file/rec', 'command',
-        \ ['rg', '--files', '--glob', '!.git', '--glob', '!node_modules'])
+        \ ['rg', '--hidden', '--files', '--glob', '!.git', '--glob', '!node_modules', '--glob', '!dist'])
   call denite#custom#var('grep', 'command', ['rg'])
 endif
 '''
