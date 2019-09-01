@@ -45,9 +45,9 @@ hook_add = '''
 " カレントディレクトリ
 nnoremap <silent> <expr><Space>p ":Denite file/rec -split='floating'<CR>"
 " バッファ一覧
-noremap <silent> <expr><Space>o ":Denite buffer -split='floating'<CR>"
+nnoremap <silent> <expr><Space>o ":Denite buffer -split='floating'<CR>"
 " 最近使ったファイルの一覧
-noremap <silent> <expr><Space>l ":Denite file/old -split='floating'<CR>"
+nnoremap <silent> <expr><Space>l ":Denite file/old -split='floating'<CR>"
 
 "Denite でバッファ内検索 
 nnoremap <silent> <expr><Space>f ":<C-u>Denite grep:. -no-empty -mode=normal<CR>"
@@ -81,6 +81,12 @@ let s:denite_options = {
       \ 'highlight_matched_char': 'Type',
       \ }
 call denite#custom#option('default', s:denite_options)
+" TODO: agに変える(file/recだとagの方が早いらしい :h denite)
+if executable('rg')
+  call denite#custom#var('file/rec', 'command',
+        \ ['rg', '--files', '--glob', '!.git', '--glob', '!node_modules'])
+  call denite#custom#var('grep', 'command', ['rg'])
+endif
 '''
 
 [[plugins]]
