@@ -1,7 +1,8 @@
 # Introduce Neovim with Dein and other plugins
-## 0. Environment
-- macOS (High Sierra)
-- zsh
+## Dependencies
+- Python 3
+- Node.js (for coc.nvim)
+- Yarn (for coc.nvim)
 
 ## 1. Install packages
 ```

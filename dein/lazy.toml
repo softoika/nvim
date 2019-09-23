@@ -30,16 +30,6 @@ on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-'''
-on_i = 1
-
-[[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
 " カレントディレクトリ
@@ -81,7 +71,6 @@ function! s:filter_settings() abort
   imap <silent><buffer> <C-p> <Plug>(denite_filter_quit)ki
   inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
   inoremap <silent><buffer> <C-j> <Esc><C-w>p
-  call deoplete#custom#buffer_option('auto_complete', v:false)
 endfunction
 
 '''
@@ -107,48 +96,26 @@ endif
 '''
 
 [[plugins]]
-repo = 'w0rp/ale'
-on_ft = ['python', 'javascript', 'vue', 'html', 'css', 'markdown']
-hook_add = '''
-let g:ale_sign_error = '⨉'
-let g:ale_sign_warning = '⚠'
-" エラー行にカーソルをあわせた際に表示されるメッセージフォーマット
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" エラー表示の列を常時表示
-let g:ale_sign_column_always = 1
-
-" ファイルを開いたときにlint実行
-let g:ale_lint_on_enter = 1
-" ファイルを保存したときにlint実行
-let g:ale_lint_on_save = 1
-" 編集中のlintはしない
-let g:ale_lint_on_text_changed = 'never'
-
-" lint結果をロケーションリストとQuickFixには表示しない
-" 出てると結構うざいしQuickFixを書き換えられるのは困る
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 0
-let g:ale_open_list = 0
-let g:ale_keep_list_window_open = 0
-
-" 有効にするlinter
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\   'markdown': ['mdl'],
-\   'shell': ['shellcheck'],
-\   'cpp': ['clangd'],
-\}
-" エラー箇所に移動
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-'''
-
-[[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
 [[plugins]]
 repo = 'elzr/vim-json'
 on_ft = ['json']
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merged = 0
+rev = 'release'
+hook_add = '''
+" if hidden is not set, TextEdit might fail.
+set hidden
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+'''
 
