@@ -34,9 +34,6 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
-repo = 'thinca/vim-quickrun'
-
-[[plugins]]
 repo = 'kassio/neoterm'
 hook_add = '''
 let g:neoterm_default_mod = 'vertical belowright'
@@ -57,5 +54,17 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+nmap <silent> <leader>[ <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> <leader>] <Plug>(coc-references)
+" Remap for rename current word
+nmap <leader>r <Plug>(coc-rename)
 '''
 
