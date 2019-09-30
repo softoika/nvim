@@ -8,9 +8,10 @@ set autoindent
 set smartindent
 " python用smartindentカスタマイズ
 autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
-" html, css, vueは2文字幅
+" html, css, ts, vueは2文字幅
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType vue  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " シェルスクリプトも2文字幅
 autocmd FileType sh  setlocal shiftwidth=2 tabstop=2 softtabstop=2
