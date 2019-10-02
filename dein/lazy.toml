@@ -131,8 +131,11 @@ nmap <silent> <leader>] <Plug>(coc-references)
 nmap <leader>r <Plug>(coc-rename)
 " Remap for do codeAction of current line
 nmap <leader>i  <Plug>(coc-codeaction)
+
+" Start coc.nvim when vim launches
+au VimEnter * CocStart
 '''
-hook_done_update = '''
+hook_post_update = '''
 CocInstall coc-tsserver
 CocInstall coc-angular
 CocInstall coc-prettier
