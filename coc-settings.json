@@ -1,4 +1,5 @@
 {
+  "suggest.noselect": false,
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
@@ -9,10 +10,21 @@
     "clangd": {
       "command": "clangd",
       "args": ["--background-index"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["css", "scss", "Markdown", "json", "typescript"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "Markdown",
+    "json",
+    "typescript"
+  ]
 }
-

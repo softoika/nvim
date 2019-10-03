@@ -140,5 +140,7 @@ CocInstall coc-tsserver
 CocInstall coc-angular
 CocInstall coc-prettier
 CocInstall coc-json
+CocInstall coc-html
+CocInstall coc-css
 '''
 
