@@ -33,15 +33,15 @@ depends = ['neosnippet-snippets']
 repo = 'Shougo/denite.nvim'
 hook_add = '''
 " カレントディレクトリ
-nnoremap <silent> <expr><Space>p ":Denite file/rec -split='floating'<CR>"
+nnoremap <silent> <expr><leader>p ":Denite file/rec -split='floating'<CR>"
 " バッファ一覧
-nnoremap <silent> <expr><Space>o ":Denite buffer -split='floating'<CR>"
+nnoremap <silent> <expr><leader>o ":Denite buffer -split='floating'<CR>"
 " 最近使ったファイルの一覧
-nnoremap <silent> <expr><Space>l ":Denite file/old -split='floating'<CR>"
+nnoremap <silent> <expr><leader>l ":Denite file/old -split='floating'<CR>"
 
 "Denite でバッファ内検索 
-nnoremap <silent> <expr><Space>f ":<C-u>Denite grep<CR>"
-nnoremap <silent> <expr><Space>g ":<C-u>DeniteCursorWord grep<CR>"
+nnoremap <silent> <expr><leader>f ":<C-u>Denite grep<CR>"
+nnoremap <silent> <expr><leader>g ":<C-u>DeniteCursorWord grep<CR>"
 
 " Define mappings
 autocmd FileType denite call s:denite_keymaps()
@@ -70,7 +70,9 @@ function! s:filter_settings() abort
   imap <silent><buffer> <C-n> <Plug>(denite_filter_quit)ji
   imap <silent><buffer> <C-p> <Plug>(denite_filter_quit)ki
   inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
-  inoremap <silent><buffer> <C-j> <Esc><C-w>p
+  inoremap <silent><buffer><expr> <C-j> denite#do_map('do_action', 'vsplitswitch')
+  inoremap <silent><buffer><expr> <C-k> denite#do_map('do_action', 'splitswitch')
+  inoremap <silent><buffer> <C-p> <Esc><C-w>p
 endfunction
 
 '''
