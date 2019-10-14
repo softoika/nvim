@@ -21,7 +21,10 @@ depends = ['context_filetype.vim']
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
 hook_add = '''
+set laststatus=2
 let g:airline_theme = 'bubblegum'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 1
 '''
 
 [[plugins]]
@@ -38,5 +41,24 @@ repo = 'kassio/neoterm'
 hook_add = '''
 let g:neoterm_default_mod = 'vertical belowright'
 let g:neoterm_autoinsert = 1
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+let g:webdevicons_enable_denite = 1
+'''
+
+[[plugins]]
+repo = 'edkolev/tmuxline.vim'
+hook_add = '''
+let g:tmuxline_preset = {
+  \'a'    : '#S',
+  \'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
+  \'win'  : ['#I', '#W'],
+  \'cwin' : ['#I', '#W', '#F'],
+  \'y'    : ['%Y/%m/%d', '%a', '%R'],
+  \'z'    : '#H'
+  \}
 '''
 

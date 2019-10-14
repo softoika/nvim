@@ -1,7 +1,5 @@
 set clipboard=unnamed,unnamedplus " システムのクリップボードと共有
 
-set ambiwidth=double " 2バイト文字対応
-
 " コメント継続しない
 augroup auto_comment_off
 	autocmd!
