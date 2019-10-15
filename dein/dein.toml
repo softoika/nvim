@@ -54,10 +54,15 @@ repo = 'edkolev/tmuxline.vim'
 hook_add = '''
 let g:tmuxline_preset = {
   \'a'    : '#S',
-  \'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
   \'win'  : ['#I', '#W'],
   \'cwin' : ['#I', '#W', '#F'],
   \'z'    : ['%Y/%m/%d', '%a', '%R']
   \}
 '''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
