@@ -57,8 +57,7 @@ let g:tmuxline_preset = {
   \'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
   \'win'  : ['#I', '#W'],
   \'cwin' : ['#I', '#W', '#F'],
-  \'y'    : ['%Y/%m/%d', '%a', '%R'],
-  \'z'    : '#H'
+  \'z'    : ['%Y/%m/%d', '%a', '%R']
   \}
 '''
 
