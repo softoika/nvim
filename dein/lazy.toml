@@ -133,6 +133,7 @@ nmap <silent> <leader>] <Plug>(coc-references)
 nmap <leader>r <Plug>(coc-rename)
 " Remap for do codeAction of current line
 nmap <leader>i  <Plug>(coc-codeaction)
+nmap <silent> <expr><leader><Space> ":<C-u>call CocActionAsync('doHover')<CR>"
 
 " Start coc.nvim when vim launches
 au VimEnter * CocStart
@@ -171,6 +172,7 @@ call defx#custom#column('icon', {
         \ 'root_icon': ' ',
         \ })
 '''
+depends = ['defx-icons']
 
 [[plugins]]
 repo = 'kristijanhusak/defx-icons'
