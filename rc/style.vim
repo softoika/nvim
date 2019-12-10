@@ -27,4 +27,4 @@ set number             " 行番号を表示する"
 set colorcolumn=80     " 80文字目にラインを入れる
 set cursorline         " カーソル行の背景色を変える
 set pumheight=10       " 補完メニューの高さ
-
+set relativenumber
