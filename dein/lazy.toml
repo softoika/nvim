@@ -194,7 +194,7 @@ let g:defx_icons_nested_closed_tree_icon = ''
 defx = '''
 " Define mappings
 nnoremap <silent><buffer><expr> <CR>
-\ defx#async_action('drop')
+\ defx#async_action('multi', ['drop', 'quit'])
 nnoremap <silent><buffer><expr> c
 \ defx#do_action('copy')
 nnoremap <silent><buffer><expr> !
@@ -205,8 +205,10 @@ nnoremap <silent><buffer><expr> p
 \ defx#do_action('paste')
 nnoremap <silent><buffer><expr> l
 \ defx#async_action('drop')
-nnoremap <silent><buffer><expr> E
-\ defx#do_action('drop', 'vsplit')
+nnoremap <silent><buffer><expr> <C-j>
+\ defx#do_action('multi', [['drop', 'vsplit'], 'quit'])
+nnoremap <silent><buffer><expr> <C-k>
+\ defx#do_action('multi', [['drop', 'split'], 'quit'])
 nnoremap <silent><buffer><expr> P
 \ defx#do_action('open', 'pedit')
 nnoremap <silent><buffer><expr> o
