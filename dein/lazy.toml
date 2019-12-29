@@ -142,6 +142,7 @@ hook_post_update = '''
 CocInstall coc-tsserver
 CocInstall coc-angular
 CocInstall coc-prettier
+CocInstall coc-eslint
 CocInstall coc-json
 CocInstall coc-html
 CocInstall coc-css
