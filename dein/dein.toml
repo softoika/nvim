@@ -69,3 +69,16 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+nnoremap <leader>p :FZF<CR>
+nnoremap <leader>o :Buffers<CR>
+nnoremap <leader>f :Rg<CR>
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
