@@ -61,9 +61,6 @@ let g:tmuxline_preset = {
 '''
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
@@ -82,3 +79,6 @@ nnoremap <leader>f :Rg<CR>
 repo = 'junegunn/fzf'
 build = './install --all'
 merged = 0
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
