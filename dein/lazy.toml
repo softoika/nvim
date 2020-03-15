@@ -78,6 +78,7 @@ CocInstall coc-eslint
 CocInstall coc-json
 CocInstall coc-html
 CocInstall coc-css
+CocInstall coc-clangd
 '''
 
 [[plugins]]
