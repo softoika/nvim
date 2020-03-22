@@ -6,6 +6,11 @@
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["vim"]
     }
   },
   "coc.preferences.formatOnSaveFiletypes": [
