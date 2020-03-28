@@ -31,9 +31,6 @@ let g:airline#extensions#coc#enabled = 1
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
