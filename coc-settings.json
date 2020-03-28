@@ -20,5 +20,6 @@
     "json",
     "html",
     "typescript"
-  ]
+  ],
+  "diagnostic.signOffset": 9999999
 }
