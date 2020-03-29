@@ -9,7 +9,7 @@ set smartindent
 " python用smartindentカスタマイズ
 autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 autocmd FileType
-  \ html,css,typescript,vue,sh,zsh,yaml,json
+  \ html,css,typescript,vue,sh,zsh,yaml,json,vim
   \ setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "--------------------------------------
