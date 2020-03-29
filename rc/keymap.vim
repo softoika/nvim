@@ -20,6 +20,8 @@ nnoremap <S-Down>  <C-w>+<CR>
 nnoremap Y y$
 " Enterでノーマルモードのまま改行挿入
 nnoremap <Return> o<ESC>
+" 全行ヤンク
+nnoremap <leader>y :<C-u>%y<CR>
 
 " jjでノーマルモード
 inoremap <silent> jj <Esc>:<C-u>w<CR>
