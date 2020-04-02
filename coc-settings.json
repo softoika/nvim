@@ -21,5 +21,6 @@
     "html",
     "typescript"
   ],
-  "diagnostic.signOffset": 9999999
+  "diagnostic.signOffset": 9999999,
+  "angular.ngdk": "$HOME/Repositories/shoprun/Stores/ngapp/node_modules/@angular/language-service"
 }

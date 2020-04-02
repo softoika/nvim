@@ -47,6 +47,7 @@ nmap <leader>r <Plug>(coc-rename)
 " nmap <leader>i  <Plug>(coc-codeaction)
 nmap <leader>i :<C-u>execute 'CocCommand actions.open'<CR>
 nmap <silent> <expr><leader><Space> ":<C-u>call CocActionAsync('doHover')<CR>"
+nmap <leader>d :<C-u>CocList diagnostics<CR>
 
 " Start coc.nvim when vim launches
 au VimEnter * CocStart
