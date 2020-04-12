@@ -109,3 +109,11 @@ build = 'make'
 [[plugins]]
 repo = 'thinca/vim-themis'
 
+[[plugins]]
+repo = 'softoika/ngswitcher.vim'
+hook_add = '''
+nnoremap <leader><S-u> :<C-u>NgSwitchTS<CR>
+nnoremap <leader><S-i> :<C-u>NgSwitchCSS<CR>
+nnoremap <leader><S-o> :<C-u>NgSwitchHTML<CR>
+nnoremap <leader><S-p> :<C-u>NgSwitchSpec<CR>
+'''
