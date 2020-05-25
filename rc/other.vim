@@ -1,12 +1,5 @@
 set clipboard=unnamed,unnamedplus " システムのクリップボードと共有
 
-" コメント継続しない
-augroup auto_comment_off
-	autocmd!
-	autocmd BufEnter * setlocal formatoptions-=r
-	autocmd BufEnter * setlocal formatoptions-=o
-augroup END
-
 "--------------------------------------
 " 検索/置換の設定
 "--------------------------------------
