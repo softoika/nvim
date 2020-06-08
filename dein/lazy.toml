@@ -186,4 +186,7 @@ nnoremap <silent><buffer><expr> <Tab> winnr('$') != 1 ?
 \ ':<C-u>Defx -buffer-name=temp -split=vertical<CR>'
 '''
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['html']
 
