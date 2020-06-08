@@ -117,3 +117,6 @@ nnoremap <leader><S-i> :<C-u>NgSwitchCSS<CR>
 nnoremap <leader><S-o> :<C-u>NgSwitchHTML<CR>
 nnoremap <leader><S-p> :<C-u>NgSwitchSpec<CR>
 '''
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
