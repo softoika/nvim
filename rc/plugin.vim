@@ -35,4 +35,6 @@ call dein#save_state()
 if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
-" }}}
+
+" Vimビルトインのプラグインを有効化
+source $VIMRUNTIME/macros/matchit.vim
