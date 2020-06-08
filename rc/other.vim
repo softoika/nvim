@@ -1,5 +1,8 @@
 set clipboard=unnamed,unnamedplus " システムのクリップボードと共有
 
+" o/Oでのコメント継続をしない
+autocmd FileType * setlocal formatoptions-=o
+
 "--------------------------------------
 " 検索/置換の設定
 "--------------------------------------
