@@ -120,3 +120,6 @@ nnoremap <leader><S-p> :<C-u>NgSwitchSpec<CR>
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
