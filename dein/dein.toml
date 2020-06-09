@@ -70,6 +70,16 @@ hook_add = '''
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>o :Buffers<CR>
 nnoremap <leader>f :Rg<CR>
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+" Example: RgArg -t ts -- <keyword>
+"          RgArg -t ts -t html -- ''
+command! -bang -nargs=* RgArg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1,
+  \   fzf#vim#with_preview(), <bang>0)
 '''
 
 [[plugins]]
