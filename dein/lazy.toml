@@ -58,7 +58,7 @@ CocInstall coc-html
 CocInstall coc-css
 CocInstall coc-clangd
 CocInstall coc-actions
-CocInstall coc-rls
+CocInstall coc-rust-analyzer
 '''
 
 [[plugins]]
