@@ -25,3 +25,5 @@ call s:load('plugin')
 call s:load('style')
 call s:load('other')
 call s:load('template')
+
+autocmd FileType * setlocal formatoptions-=o
