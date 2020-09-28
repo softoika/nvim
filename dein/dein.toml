@@ -145,3 +145,6 @@ let g:closetag_regions = {
     \ 'javascriptreact': 'jsxRegion',
     \ }
 '''
+
+[[plugins]]
+repo = 'rhysd/conflict-marker.vim'
