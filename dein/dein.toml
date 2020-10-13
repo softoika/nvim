@@ -148,3 +148,9 @@ let g:closetag_regions = {
 
 [[plugins]]
 repo = 'rhysd/conflict-marker.vim'
+
+[[plugins]]
+repo = 'voldikss/vim-translator'
+hook_add = '''
+let g:translator_target_lang = 'ja'
+'''
