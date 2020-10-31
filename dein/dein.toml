@@ -136,8 +136,8 @@ nnoremap <leader><S-p> :<C-u>NgSwitchSpec<CR>
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
+# [[plugins]]
+# repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'alvan/vim-closetag'
@@ -158,4 +158,10 @@ repo = 'rhysd/conflict-marker.vim'
 repo = 'voldikss/vim-translator'
 hook_add = '''
 let g:translator_target_lang = 'ja'
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_add = '''
+luafile ~/.config/nvim/dein/treesitter.lua
 '''
