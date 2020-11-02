@@ -181,3 +181,13 @@ nnoremap <silent><buffer><expr> <Tab> winnr('$') != 1 ?
 \ ':<C-u>wincmd w<CR>' :
 \ ':<C-u>Defx -buffer-name=temp -split=vertical<CR>'
 '''
+
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+if = 'has("nvim")'
+on_event = 'BufRead'
+hook_source = '''
+luafile ~/.config/nvim/dein/treesitter.lua
+'''
+

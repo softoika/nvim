@@ -159,9 +159,3 @@ repo = 'voldikss/vim-translator'
 hook_add = '''
 let g:translator_target_lang = 'ja'
 '''
-
-[[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-hook_add = '''
-luafile ~/.config/nvim/dein/treesitter.lua
-'''
