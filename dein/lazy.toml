@@ -182,12 +182,10 @@ nnoremap <silent><buffer><expr> <Tab> winnr('$') != 1 ?
 \ ':<C-u>Defx -buffer-name=temp -split=vertical<CR>'
 '''
 
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+on_event = 'BufRead'
 
 [[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-if = 'has("nvim")'
+repo = 'ryanoasis/vim-devicons'
 on_event = 'BufRead'
-hook_source = '''
-luafile ~/.config/nvim/dein/treesitter.lua
-'''
-
