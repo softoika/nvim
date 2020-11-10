@@ -189,3 +189,16 @@ on_event = 'BufRead'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 on_event = 'BufRead'
+
+
+[[plugins]]
+repo = 'antoinemadec/FixCursorHold.nvim'
+if = 'has("nvim")'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+depends = ['FixCursorHold.nvim']
+hook_add = '''
+nnoremap <leader>g :<C-u>Fern . -reveal=%<CR>
+nnoremap <leader>h :<C-u>Fern %:h<CR>
+'''
