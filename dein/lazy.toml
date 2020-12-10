@@ -47,6 +47,9 @@ nmap <leader>d :<C-u>CocList diagnostics<CR>
 
 " Start coc.nvim when vim launches
 au VimEnter * CocStart
+
+" scss support for coc-css
+autocmd FileType scss setl iskeyword+=@-@
 '''
 hook_post_update = '''
 CocInstall coc-tsserver
