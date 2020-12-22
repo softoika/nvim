@@ -83,3 +83,19 @@ hook_add = '''
 nnoremap <leader>g :<C-u>Fern . -reveal=%<CR>
 nnoremap <leader>h :<C-u>Fern %:h<CR>
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+if = 'has("nvim")'
+on_event = 'BufRead'
+hook_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+}
+EOF
+'''

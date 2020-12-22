@@ -10,13 +10,6 @@ hook_add = '''
   au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
 
-[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
-
 [[plugins]]
 repo = 'cohama/lexima.vim'
 
@@ -122,9 +115,6 @@ nnoremap <leader>vp :<C-u>VNgSwitchSpec<CR>
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
-
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'alvan/vim-closetag'
