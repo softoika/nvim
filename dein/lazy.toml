@@ -17,6 +17,7 @@ on_ft = ['json']
 repo = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
+on_event = 'BufRead'
 hook_add = '''
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -44,9 +45,6 @@ nmap <leader>r <Plug>(coc-rename)
 nmap <leader>i :<C-u>CocAction<CR>
 nmap <silent> <expr><leader><Space> ":<C-u>call CocActionAsync('doHover')<CR>"
 nmap <leader>d :<C-u>CocList diagnostics<CR>
-
-" Start coc.nvim when vim launches
-au VimEnter * CocStart
 
 " scss support for coc-css
 autocmd FileType scss setl iskeyword+=@-@
