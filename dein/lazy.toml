@@ -97,3 +97,8 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 '''
+
+[[plugins]]
+repo =  'mzlogin/vim-markdown-toc'
+on_ft = 'markdown'
+
