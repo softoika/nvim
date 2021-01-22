@@ -19,9 +19,10 @@
     "Markdown",
     "json",
     "html",
+    "javascript",
     "typescript",
     "typescriptreact",
     "rust"
   ],
-  "diagnostic.signOffset": 9999999
+  "diagnostic.signPriority": 9999999
 }
