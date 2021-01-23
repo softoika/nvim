@@ -59,6 +59,7 @@ CocInstall coc-html
 CocInstall coc-css
 CocInstall coc-clangd
 CocInstall coc-rust-analyzer
+CocInstall coc-tailwindcss
 '''
 
 [[plugins]]
