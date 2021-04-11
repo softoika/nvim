@@ -81,6 +81,15 @@ depends = ['FixCursorHold.nvim']
 hook_add = '''
 nnoremap <leader>g :<C-u>Fern . -reveal=%<CR>
 nnoremap <leader>h :<C-u>Fern %:h<CR>
+function! s:init_fern() abort
+  " fern開く前のファイルと選択したファイルがvsplitで開かれている状態にする
+  nmap <buffer> <leader>v <Plug>(fern-action-open:vsplit)<C-w>l<C-o><C-w>h
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
 '''
 
 [[plugins]]
