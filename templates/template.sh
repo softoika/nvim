@@ -25,6 +25,17 @@ cleanup() {
   # script cleanup here
 }
 
+msg() {
+  echo >&2 -e "${1-}"
+}
+
+die() {
+  local msg=$1
+  local code=${2-1} # default exit status 1
+  msg "$msg"
+  exit "$code"
+}
+
 parse_params() {
   # default values of variables set from params
   flag=0
@@ -34,7 +45,6 @@ parse_params() {
     case "${1-}" in
     -h | --help) usage ;;
     -v | --verbose) set -x ;;
-    --no-color) NO_COLOR=1 ;;
     -f | --flag) flag=1 ;; # example flag
     -p | --param) # example named parameter
       param="${2-}"
