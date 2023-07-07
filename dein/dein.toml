@@ -143,3 +143,19 @@ hook_add = '''
 nnoremap <leader>@ :<C-u>Vista coc<CR>
 nnoremap <leader>; :<C-u>Vista finder coc<CR>
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+if = 'has("nvim")'
+on_event = 'BufRead'
+hook_add = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+}
+EOF
+'''

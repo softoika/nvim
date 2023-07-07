@@ -93,22 +93,6 @@ augroup END
 '''
 
 [[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-if = 'has("nvim")'
-on_event = 'BufRead'
-hook_source = '''
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-    disable = {},
-  },
-}
-EOF
-'''
-
-[[plugins]]
 repo =  'mzlogin/vim-markdown-toc'
 on_ft = 'markdown'
 
